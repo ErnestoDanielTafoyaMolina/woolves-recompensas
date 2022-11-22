@@ -1,10 +1,11 @@
 import React from 'react'
+import { HistorialTable } from '../components/HistorialTable'
 
 export const HistorialPage = () => {
   return (
     <>
-      <h2>Este será el historial</h2>
-    
+      <h2>Esto es lo que has pedido</h2>
+      <HistorialTable />
     </>
   )
 }

@@ -23,9 +23,9 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <NavLink 
-          className="navbar-brand"
+          className="navbar-brand text-light"
           to="/catalogue"
-          >WolvesRecompensas
+          ><b>WolvesRecompensas</b>
         </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -34,14 +34,14 @@ export const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink 
-                className='nav-link'
+                className='nav-link text-light'
                 to='/catalogue'
                 >Catalogo
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink 
-                className='nav-link'
+                className='nav-link text-light'
                 to='/historial'
                 >Historial
               </NavLink>
