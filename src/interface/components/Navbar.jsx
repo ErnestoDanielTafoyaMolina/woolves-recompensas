@@ -7,7 +7,7 @@ import '../../themes/navbar.css'
 
 export const Navbar = () => {
 
-  const { login, logout } = useContext( AuthContext );
+  const { login,user, logout  } = useContext( AuthContext );
 
   const navigate = useNavigate();
 
@@ -51,8 +51,7 @@ export const Navbar = () => {
           <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
             <ul className="navbar-nav ml-auto">
               <span className="nav-item nav-link text-light">
-                Ernesto Daniel
-                200wp
+                { user.name } { user.points }wp
               </span>
               <button
                         className="nav-item nav-link btn text-light"
