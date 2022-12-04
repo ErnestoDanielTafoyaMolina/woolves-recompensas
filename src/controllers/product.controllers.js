@@ -29,9 +29,10 @@ export const getUnavailableProducts = async(req, res)=> {
     }
 }
 //obtiene el producto por id
-export const getProductById = (req,res) => {
+export const getProductById = async(req,res) => {
     try {
-        res.send("Aqui solo habrá un producto por Id");
+        const product = await Product.findById(req.params.id)
+        return res.send(product);
     } catch (error) {
         return res.status(500).json({ message:error.message });
     }
@@ -52,7 +53,7 @@ export const addProduct = async (req, res) => {
         }
         const NewProduct = new Product ( {product, description, price, state, image } );
     
-        await NewProduct.save()
+        await NewProduct.save();
         return res.send(NewProduct);
     } catch (error) {
         return res.status(500).json({ message:error.message });
@@ -73,7 +74,7 @@ export const editProductById = async(req,res) => {
     try {
         const post = await Product.findByIdAndUpdate(req.params.id, req.body, { new:true });
         console.log(post)
-        return res.send("Recivido") 
+        return res.send(post);
     } catch (error) {
         return res.status(500).json({ message:error.message });
     }
