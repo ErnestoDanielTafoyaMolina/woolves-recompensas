@@ -1,25 +1,25 @@
 import React, { useContext, useEffect } from 'react'
 import { AdminCards } from '../components/AdminCards'
-import { CreateModal } from '../components/CreateModal'
 import { ProductContext } from '../context/ProdutctContext';
-import { useProduct } from '../context/ProductProvider';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { GrAddCircle } from 'react-icons/gr';
 export const AdminCataloguePage = () => {
   
   const { products } = useContext(ProductContext);
-
+  const navigate = useNavigate();
   return (
     <>
-          <h2>¿Qué vas a editar hoy?...</h2>
-          <CreateModal/>
+      <h2>¿Qué vas a editar hoy?...</h2>
+      <button className='btn btn-success' onClick={()=> navigate('/new')}>
+        <GrAddCircle/>Nuevo
+      </button>
       <div className="Productos">
         {
-          products.map( producto => (
+          products.map( product => (
             <AdminCards 
-                  key={ producto._id }
-                   description={ producto.description } 
-                   img={producto.url}
-                   price={producto.price}
-                   titile={producto.product}/>
+                  
+                  product={ product }
+                  key={ product._id }/>
           ) )
         }
       </div>

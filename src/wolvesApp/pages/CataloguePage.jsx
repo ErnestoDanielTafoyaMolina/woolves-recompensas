@@ -19,10 +19,7 @@ export const CataloguePage = () => {
             products.map( producto => (
             <Cards 
               key={ producto._id }
-              description={ producto.description } 
-              img={producto.url}
-              price={producto.price}
-              titile={producto.product}/>
+              producto={ producto } />
           ) ):<h2>No hay productos disponibles</h2>
         }
       </div>

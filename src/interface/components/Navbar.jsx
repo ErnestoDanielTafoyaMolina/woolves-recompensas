@@ -46,6 +46,22 @@ export const Navbar = () => {
                 >Historial
               </NavLink>
             </li>
+
+            <li className="nav-item">
+              <NavLink 
+                className='nav-link text-light'
+                to='/admin-c'
+                >Admin
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink 
+                className='nav-link text-light'
+                to='/admin-ul'
+                >Peticiones
+              </NavLink>
+            </li>
+
           </ul>
 
           <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
